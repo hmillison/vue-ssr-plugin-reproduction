@@ -4,7 +4,9 @@ import Home from './views/Home.vue';
 
 Vue.use(Router);
 
-export default new Router({
+export function createRouter () {
+          return new Router({
+            mode: 'history',
   routes: [
     {
       path: '/',
@@ -20,4 +22,5 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
     },
   ],
-});
+})
+        };
